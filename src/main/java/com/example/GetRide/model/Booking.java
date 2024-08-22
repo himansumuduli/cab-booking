@@ -1,10 +1,7 @@
 package com.example.GetRide.model;
 
 import com.example.GetRide.Enum.BookingStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -28,4 +25,14 @@ BookingStatus bookingStatus;
 double totalDistance;
 double totalFare;
 Date bookedAt;
+
+
+
+@ManyToOne
+@JoinColumn
+Customer customer;
+
+@ManyToOne
+@JoinColumn
+Driver driver;
 }

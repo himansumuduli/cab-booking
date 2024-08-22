@@ -2,6 +2,7 @@ package com.example.GetRide.controller;
 
 
 import com.example.GetRide.dto.request.CustomerRequest;
+import com.example.GetRide.dto.response.CustomerResponse;
 import com.example.GetRide.model.Customer;
 import com.example.GetRide.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,12 @@ public class CustomerController {
 
     @PostMapping("/add")
 public ResponseEntity addCustomer(@RequestBody CustomerRequest customerRequest){
- String response = customerService.addcustomer(customerRequest);
- return  new ResponseEntity(response, HttpStatus.CREATED);
+ CustomerResponse customerResponse = customerService.addcustomer(customerRequest);
+ return  new ResponseEntity(customerResponse, HttpStatus.CREATED);
 
 }
 @GetMapping("/get")
-    public Customer getCustomer(@RequestParam("email") String email){
+    public CustomerResponse getCustomer(@RequestParam("email") String email){
         return customerService.getCustomer(email);
 }
 }

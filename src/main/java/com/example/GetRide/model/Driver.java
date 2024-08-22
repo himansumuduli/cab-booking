@@ -5,6 +5,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 @NoArgsConstructor
@@ -25,8 +27,12 @@ public class Driver {
     @Column(unique = true,nullable = false)
     String drivingLicense;
     @Column(unique = true,nullable = false)
-    long number;
+    long mobileNo;
 
+    @OneToOne(mappedBy = "driver" ,cascade = CascadeType.ALL)
+    Cab cab;
 
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
+    List<Booking> bookings = new ArrayList<>();
 
 }
