@@ -15,11 +15,7 @@ public class CustomerTransformer {
 
     }
     public static CustomerResponse customerToCustomerResponse(Customer customer){
-//        CustomerResponse customerResponse = new CustomerResponse();
-//        customerResponse.setName(customer.getName());
-//        customerResponse.setGender(customer.getGender());
-//        customerResponse.setEmailId(customer.getEmailId());
-//        return customerResponse;
+
         return CustomerResponse.builder()
                 .name(customer.getName())
                 .gender(customer.getGender())

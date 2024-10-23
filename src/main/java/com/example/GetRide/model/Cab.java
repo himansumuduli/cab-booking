@@ -11,16 +11,17 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class Cab {
   @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
 int id;
 
-String cabNumer;
+String cabNumber;
 
 CabType cabType;
 
-double fareperkm;
+double farePerKm;
 
 boolean booked;
 

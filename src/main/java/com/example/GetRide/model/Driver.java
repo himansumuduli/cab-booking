@@ -16,11 +16,12 @@ import java.util.logging.Level;
 @Entity
 @Table(name = "driver")
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-
+     @Column(name="name")
     String name;
 
     int age;
